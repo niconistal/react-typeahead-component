@@ -9,15 +9,22 @@ var React = require('react'),
 module.exports = React.createClass({
     displayName: 'Typeahead',
 
+    ,
     statics: {
-        getInstanceCount: (function() {
-            var count = 0;
+        count: 0,
+        resetCount: (function() {
 
             return function() {
-                return ++count;
+                this.count = 0;
+            };
+        }()),
+        getInstanceCount: (function() {
+
+            return function() {
+                return ++this.count;
             };
         }())
-    },
+    }
 
     propTypes: process.env.NODE_ENV === 'production' ? {} : {
         inputId: React.PropTypes.string,
@@ -345,7 +352,7 @@ module.exports = React.createClass({
     },
 
     focus: function() {
-        this.refs.input.getDOMNode().focus();
+        React.findDOMNode(this.refs.input).focus();
     },
 
     handleFocus: function(event) {
@@ -502,7 +509,7 @@ module.exports = React.createClass({
         var _this = this,
             target = event.target;
 
-        if (target !== window && !this.getDOMNode().contains(target)) {
+        if (target !== window && !React.findDOMNode(this).contains(target)) {
             _this.hideHint();
             _this.hideDropdown();
         }
