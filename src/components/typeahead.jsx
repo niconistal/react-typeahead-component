@@ -9,7 +9,6 @@ var React = require('react'),
 module.exports = React.createClass({
     displayName: 'Typeahead',
 
-    ,
     statics: {
         count: 0,
         resetCount: (function() {
@@ -24,7 +23,7 @@ module.exports = React.createClass({
                 return ++this.count;
             };
         }())
-    }
+    },
 
     propTypes: process.env.NODE_ENV === 'production' ? {} : {
         inputId: React.PropTypes.string,
