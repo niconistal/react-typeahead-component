@@ -19,8 +19,8 @@
     "component"
   ],
   "files": [
-    "./dist/npm",
-    "./src"
+    "dist/npm",
+    "src"
   ],
   "directories": {
     "lib": "./src",
