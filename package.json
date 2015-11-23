@@ -20,7 +20,7 @@
   ],
   "files": [
     "dist/npm",
-    "lib"
+    "src"
   ],
   "directories": {
     "lib": "./src",
