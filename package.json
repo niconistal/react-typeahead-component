@@ -18,12 +18,8 @@
     "react-component",
     "component"
   ],
-  "files": [
-    "dist/npm",
-    "src"
-  ],
   "directories": {
-    "lib": "./dist/npm",
+    "lib": "./src",
     "example": "./example"
   },
   "scripts": {
