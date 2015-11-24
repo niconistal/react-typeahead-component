@@ -10,11 +10,17 @@ module.exports = React.createClass({
     displayName: 'Typeahead',
 
     statics: {
-        getInstanceCount: (function() {
-            var count = 0;
+        count: 0,
+        resetCount: (function() {
 
             return function() {
-                return ++count;
+                this.count = 0;
+            };
+        }()),
+        getInstanceCount: (function() {
+
+            return function() {
+                return ++this.count;
             };
         }())
     },
